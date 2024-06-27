@@ -74,8 +74,7 @@ namespace WebAppMinimalPartsUnlimit.Api
                     : Results.NotFound();
             })
             .WithOpenApi();
-
-            // TODO: Mover a config
+                        
             var options = new JsonSerializerOptions(JsonSerializerDefaults.Web)
             {
                 //PropertyNameCaseInsensitive = false,

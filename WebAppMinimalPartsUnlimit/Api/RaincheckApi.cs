@@ -14,18 +14,12 @@ namespace WebAppMinimalPartsUnlimit.Api
         {
             var group = routes.MapGroup("/erp")
                 .WithTags("Raincheck Api");
-
-            // TODO: Mover a config
+            
             var options = new JsonSerializerOptions(JsonSerializerDefaults.Web)
             {
-                //PropertyNameCaseInsensitive = false,
-                //PropertyNamingPolicy = null,
                 WriteIndented = true,
-                //IncludeFields = false,
                 MaxDepth = 0,
                 ReferenceHandler = ReferenceHandler.IgnoreCycles,
-                //ReferenceHandler = ReferenceHandler.Preserve
-                //DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
             };
 
             group.MapGet("/rainchecks", async Task<Results<Ok<IList<Raincheck>>, NotFound>> (PartsBdContext db) =>

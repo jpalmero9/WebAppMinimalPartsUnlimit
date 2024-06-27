@@ -13,17 +13,11 @@ namespace WebAppMinimalPartsUnlimit.Api
             var group = routes.MapGroup("/erp")
                 .WithTags("Product Api");
 
-
-            // TODO: Mover a config
             var options = new JsonSerializerOptions(JsonSerializerDefaults.Web)
             {
-                //PropertyNameCaseInsensitive = false,
-                //PropertyNamingPolicy = null,
                 WriteIndented = true,
-                //IncludeFields = false,
                 ReferenceHandler = ReferenceHandler.IgnoreCycles,
                 DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-                //ReferenceHandler = ReferenceHandler.Preserve
             };
 
             group.MapGet("/products", async (PartsBdContext db) =>
